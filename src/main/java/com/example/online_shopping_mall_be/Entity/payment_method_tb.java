@@ -20,7 +20,7 @@ public class payment_method_tb {
     private String payment_method;
 
     @OneToMany(mappedBy = "payment_method_id")
-    private List<payment_method_tb> payment_methods = new ArrayList<>();
+    private List<payment_method_tb> payments = new ArrayList<>();
 
     @OneToOne(mappedBy = "payment_method_id", fetch = FetchType.LAZY)
     private kakaopay_deposit_tb kakaopay_deposit;

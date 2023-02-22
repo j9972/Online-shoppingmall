@@ -28,8 +28,8 @@ public class order_tb {
     private Date register_order_date;
 
     @OneToOne(mappedBy = "order_id", fetch = FetchType.LAZY)
-    private order_tb order;
+    private delivery_point_tb delivery_point;
 
-//    @OneToOne(mappedBy = "order_id", fetch = FetchType.LAZY)
-//    private order_tb order;
+    @OneToOne(mappedBy = "order_id", fetch = FetchType.LAZY)
+    private order_detail_tb order_detail;
 }

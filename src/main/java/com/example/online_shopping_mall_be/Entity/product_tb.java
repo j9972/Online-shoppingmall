@@ -44,7 +44,7 @@ public class product_tb {
     private String product_thumbnail;
 
     @OneToOne(mappedBy = "product_id", fetch = FetchType.LAZY)
-    private product_tb product;
+    private payment_tb payments;
 
     @OneToMany(mappedBy = "product_id")
     private List<product_photo_tb> post_photos = new ArrayList<>();

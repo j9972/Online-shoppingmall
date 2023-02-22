@@ -40,5 +40,5 @@ public class order_detail_tb {
     private boolean refund_possibility;
 
     @OneToOne(mappedBy = "order_detail_id", fetch = FetchType.LAZY)
-    private order_detail_tb order_detail;
+    private order_cancel_tb order_cancel;
 }

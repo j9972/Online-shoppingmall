@@ -33,5 +33,5 @@ public class delivery_point_tb {
     private Date end_delivery_date;
 
     @OneToOne(mappedBy = "delivery_point_id", fetch = FetchType.LAZY)
-    private delivery_point_tb delivery_point;
+    private waybill_tb waybill;
 }

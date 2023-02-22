@@ -7,6 +7,8 @@ import jakarta.persistence.*;
     결제(1)(외래키) : 상품(1) -> 상품마다 결제 아이디가 다르다.
     결제(N) : 결제 방식(1)
     무통장 입금(1)(외래키) : 결제 방식(1)
+    카카오 입금(1) : 결제 방식(1)
+    네이버 입금(1) : 결제 방식(1)
  */
 @Entity
 public class payment_tb {
@@ -29,5 +31,11 @@ public class payment_tb {
     private String payment_bank;
 
     @OneToOne(mappedBy = "payment_method_id", fetch = FetchType.LAZY)
-    private payment_method_tb payment_method_bank;
+    private bank_deposit_tb bank_deposit;
+
+    @OneToOne(mappedBy = "payment_method_id", fetch = FetchType.LAZY)
+    private kakaopay_deposit_tb kakaopay_deposit;
+
+    @OneToOne(mappedBy = "payment_method_id", fetch = FetchType.LAZY)
+    private naverpay_deposit_tb naverpay_deposit;
 }

@@ -54,5 +54,8 @@ public class user_tb {
     private List<review_tb> reviews = new ArrayList<>();
 
     @OneToOne(mappedBy = "user_id", fetch = FetchType.LAZY)
-    private user_tb user;
+    private shopping_basket_tb shopping_basket;
+
+    @OneToOne(mappedBy = "user_id", fetch = FetchType.LAZY)
+    private user_auth_id_tb user_auth;
 }
