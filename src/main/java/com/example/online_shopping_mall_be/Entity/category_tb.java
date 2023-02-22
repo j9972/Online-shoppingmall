@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+    상품(N) : 카테고리(1)
+ */
 @Entity
 public class category_tb {
 
