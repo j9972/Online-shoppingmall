@@ -9,7 +9,7 @@ import jakarta.persistence.*;
  */
 @Entity
 public class payment_tb {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long payment_id;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

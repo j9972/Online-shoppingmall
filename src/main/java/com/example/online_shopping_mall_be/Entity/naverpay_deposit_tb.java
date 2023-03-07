@@ -10,7 +10,7 @@ import java.util.Date;
 @Entity
 public class naverpay_deposit_tb {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long naverpay_deposit_id;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

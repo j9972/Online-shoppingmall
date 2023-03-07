@@ -10,7 +10,7 @@ import java.util.Date;
 
 @Entity
 public class delivery_point_tb {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long delivery_point_id;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

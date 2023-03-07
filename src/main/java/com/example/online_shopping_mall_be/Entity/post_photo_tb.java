@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 
 @Entity
 public class post_photo_tb {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long post_photo_id;
 
 

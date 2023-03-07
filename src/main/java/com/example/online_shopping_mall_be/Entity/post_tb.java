@@ -15,7 +15,7 @@ import java.util.List;
 @Entity
 public class post_tb {
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long post_id;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

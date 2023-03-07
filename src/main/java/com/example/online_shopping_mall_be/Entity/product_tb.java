@@ -10,13 +10,14 @@ import java.util.List;
     상품(N) : 카테고리(1)
     결제(1) : 상품(1) -> 상품마다 결제 아이디가 다르다.
     상품(1) : 상품 사진 (N)
+     보류 : 주문(1) : 상품 (n)
     주문상세(1) : 상품(N)
     문의(1) : 상품(N)
     리뷰(n) : 상품(1)
  */
 @Entity
 public class product_tb {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long product_id;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -42,6 +43,10 @@ public class product_tb {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "order_detail_id")
     private order_detail_tb order_detail_id;
+
+//    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    @JoinColumn(name = "order__id")
+//    private order_tb order_id;
 
     @OneToOne(mappedBy = "product_id", fetch = FetchType.LAZY)
     private payment_tb payments;

@@ -9,7 +9,7 @@ import java.util.Date;
  */
 @Entity
 public class bank_deposit_tb {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long bank_deposit_id;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

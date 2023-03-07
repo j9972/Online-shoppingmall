@@ -7,7 +7,7 @@ import jakarta.persistence.*;
  */
 @Entity
 public class like_tb {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long like_id;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

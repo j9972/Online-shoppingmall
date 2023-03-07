@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 @Entity
 public class user_auth_id_tb {
 
-    @Id @GeneratedValue
+    @Id
     private String user_auth_email; // 유저 이메일
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

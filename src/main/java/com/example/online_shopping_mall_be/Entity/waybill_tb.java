@@ -9,7 +9,7 @@ import java.util.Date;
  */
 @Entity
 public class waybill_tb {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long waybill_id;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

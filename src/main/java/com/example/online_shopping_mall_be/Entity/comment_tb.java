@@ -11,7 +11,7 @@ import java.util.Date;
 @Entity
 public class comment_tb {
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long comment_id;
 
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)

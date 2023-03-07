@@ -9,7 +9,7 @@ import java.util.Date;
  */
 @Entity
 public class kakaopay_deposit_tb {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long kakaopay_deposit_id;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

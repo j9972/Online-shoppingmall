@@ -8,7 +8,7 @@ import jakarta.persistence.*;
  */
 @Entity
 public class review_tb {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long review_id;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

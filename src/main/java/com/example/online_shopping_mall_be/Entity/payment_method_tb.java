@@ -12,7 +12,7 @@ import java.util.List;
  */
 @Entity
 public class payment_method_tb {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long payment_method_id;
 
     @Column

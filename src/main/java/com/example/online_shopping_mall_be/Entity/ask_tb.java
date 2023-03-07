@@ -12,7 +12,7 @@ import java.util.List;
  */
 @Entity
 public class ask_tb {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ask_id;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

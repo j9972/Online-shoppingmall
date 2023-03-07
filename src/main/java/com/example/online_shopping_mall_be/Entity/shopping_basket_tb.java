@@ -12,7 +12,7 @@ import java.util.List;
  */
 @Entity
 public class shopping_basket_tb {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long shopping_basket_id;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

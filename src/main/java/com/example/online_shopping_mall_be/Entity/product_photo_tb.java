@@ -7,7 +7,7 @@ import jakarta.persistence.*;
  */
 @Entity
 public class product_photo_tb {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long product_photo_id;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

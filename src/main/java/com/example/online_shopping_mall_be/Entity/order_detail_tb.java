@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
-    주문 상세 번호(1) : 주문 번호 (1)
+    주문 상세 번호(1) : 주문 (1)
     주문상세(1) : 상품(N)
     주문 상세 ( 1 ) : 주문 취소 ( 1 )
  */
 @Entity
 public class order_detail_tb {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long order_detail_id;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
