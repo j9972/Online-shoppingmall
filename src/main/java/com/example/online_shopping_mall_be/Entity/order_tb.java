@@ -25,7 +25,7 @@ public class order_tb {
     private List<product_tb> products = new ArrayList<>();
 
     @Column
-    private Date register_order_date;
+    private Date register_order_date; // 주문 등록 날짜
 
     @OneToOne(mappedBy = "order_id", fetch = FetchType.LAZY)
     private delivery_point_tb delivery_point;

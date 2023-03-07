@@ -18,5 +18,5 @@ public class post_photo_tb {
 
     @Lob
     @Column(name = "post_photo", columnDefinition="BLOB")
-    private byte[] post_photo;
+    private byte[] post_photo; // 게시글 대표 사진
 }

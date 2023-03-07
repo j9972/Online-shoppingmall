@@ -20,9 +20,9 @@ public class review_tb {
     private user_tb user_id;
 
     @Column
-    private String review_title;
+    private String review_title; // 리뷰 제못
 
-    private String review_body;
+    private String review_body; // 리뷰 내용
 
-    private Integer review_counting;
+    private Integer review_counting; // 별점
 }

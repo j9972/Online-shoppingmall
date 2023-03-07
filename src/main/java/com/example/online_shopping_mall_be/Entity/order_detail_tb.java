@@ -23,21 +23,21 @@ public class order_detail_tb {
     private List<product_tb> products = new ArrayList<>();
 
     @Column
-    private Integer total_count;
+    private Integer total_count; // 총 수량
 
-    private Integer total_price;
+    private Integer total_price; // 총 금액
 
-    private Integer phone_number;
+    private Integer phone_number; // 전화번호
 
-    private String receiver;
+    private String receiver; // 수령인
 
-    private String address;
+    private String address; // 주소
 
-    private String order_request;
+    private String order_request; // 주문 요청 사항
 
-    private String order_status;
+    private String order_status;// 처리 상태
 
-    private boolean refund_possibility;
+    private boolean refund_possibility; // 환불 가능 여부
 
     @OneToOne(mappedBy = "order_detail_id", fetch = FetchType.LAZY)
     private order_cancel_tb order_cancel;

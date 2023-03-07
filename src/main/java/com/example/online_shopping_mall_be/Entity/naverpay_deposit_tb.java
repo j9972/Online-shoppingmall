@@ -18,13 +18,13 @@ public class naverpay_deposit_tb {
     private payment_method_tb payment_method_id;
 
     @Column
-    private Integer order_price;
+    private Integer order_price; // 주문 금액
 
-    private Integer deposit_price;
+    private Integer deposit_price; // 입금 금액
 
-    private Date deposit_date;
+    private Date deposit_date; // 입금 날짜
 
-    private Date payment_expire_period;
+    private Date payment_expire_period; // 결제 유효기간
 
-    private boolean payment_status;
+    private boolean payment_status; // 결제 상태
 }

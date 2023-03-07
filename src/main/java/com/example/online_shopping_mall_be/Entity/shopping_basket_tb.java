@@ -23,7 +23,7 @@ public class shopping_basket_tb {
     private List<product_tb> products = new ArrayList<>();
 
     @Column
-    private Integer product_amount;
+    private Integer product_amount; // 상품 수량
 
-    private boolean payment_status;
+    private boolean payment_status; // 결제 여부
 }

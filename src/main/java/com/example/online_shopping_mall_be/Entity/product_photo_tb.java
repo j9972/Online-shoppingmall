@@ -15,6 +15,6 @@ public class product_photo_tb {
     private product_tb product_id;
 
     @Lob
-    private String product_photo;
+    private String product_photo; // 상품 사진
 
 }

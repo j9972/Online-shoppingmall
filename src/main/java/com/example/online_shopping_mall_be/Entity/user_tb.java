@@ -22,21 +22,21 @@ public class user_tb {
     private Long user_id;
 
     @Column
-    private String user_name;
+    private String user_name; // 유저 이름
 
-    private Integer user_age;
+    private Integer user_age; // 나이
 
-    private Integer user_phone;
+    private Integer user_phone; // 핸드폰 번호
 
-    private Integer refund_bank_account;
+    private Integer refund_bank_account; // 환불 계좌 번호
 
-    private String user_address;
+    private String user_address; // 주소
 
-    private String refund_bank;
+    private String refund_bank; // 환불 계좌
 
-    private Date register_date;
+    private Date register_date; // 회원 가입 일자
 
-    private Date update_userInfo_date;
+    private Date update_userInfo_date; // 회원 정보 수정 일자
 
     @OneToMany(mappedBy = "user_id")
     private List<post_tb> posts = new ArrayList<>();
@@ -50,7 +50,7 @@ public class user_tb {
     @OneToMany(mappedBy = "user_id")
     private List<ask_tb> asks = new ArrayList<>();
 
-    @OneToMany(mappedBy = "review_id")
+    @OneToMany(mappedBy = "user_id")
     private List<review_tb> reviews = new ArrayList<>();
 
     @OneToOne(mappedBy = "user_id", fetch = FetchType.LAZY)

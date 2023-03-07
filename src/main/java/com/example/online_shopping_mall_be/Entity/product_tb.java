@@ -21,27 +21,27 @@ public class product_tb {
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
-    private category_tb category_id;
+    private category_tb category_id; // FK - 카테고리명
+
+    private String product_name; // 상품 명
+
+    private String product_title; // 타이틀
+
+    private String product_explaination; // 상품 설명
+
+    private Integer product_count; // 재고 수량
+
+    private Integer product_selling_count; // 판매 수량
+
+    private Date product_register_date; // 상품 등록 날짜
+
+    @Lob
+    @Column(name = "product_thumbnail", columnDefinition="BLOB")
+    private String product_thumbnail; // 썸네일 사진
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "order_detail_id")
     private order_detail_tb order_detail_id;
-
-    private String product_name;
-
-    private String product_title;
-
-    private String product_explaination;
-
-    private Integer product_count;
-
-    private Integer product_selling_count;
-
-    private Date product_register_date;
-
-    @Lob
-    @Column(name = "product_thumbnail", columnDefinition="BLOB")
-    private String product_thumbnail;
 
     @OneToOne(mappedBy = "product_id", fetch = FetchType.LAZY)
     private payment_tb payments;
@@ -57,6 +57,9 @@ public class product_tb {
     @JoinColumn(name = "ask_id")
     private ask_tb ask_id;
 
-    @OneToMany(mappedBy = "review_id")
+    @OneToMany(mappedBy = "product_id")
+    private List<ask_tb> asks = new ArrayList<>();
+
+    @OneToMany(mappedBy = "product_id")
     private List<review_tb> reviews = new ArrayList<>();
 }

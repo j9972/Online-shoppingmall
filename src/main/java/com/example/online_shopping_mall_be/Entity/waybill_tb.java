@@ -17,11 +17,11 @@ public class waybill_tb {
     private delivery_point_tb delivery_point_id;
 
     @Column
-    private String delivery_company;
+    private String delivery_company; // 택배사
 
-    private Integer waybill_number;
+    private Integer waybill_number; // 운송장 번호
 
-    private Date waybill_register_date;
+    private Date waybill_register_date; // 운송장 등록일
 
-    private Date waybill_update_date;
+    private Date waybill_update_date; // 운송장 수정일
 }

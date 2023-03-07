@@ -7,9 +7,8 @@ import java.util.List;
 
 /*
     결제(N) : 결제 방식(1)
-    결제 방식(1) : 무통장 입금 (1)
-    결제 방식(1) : 카카오페이 입금 (1)
-    결제 방식(1) : 네이버페이 입금 (1)
+
+
  */
 @Entity
 public class payment_method_tb {
@@ -17,7 +16,7 @@ public class payment_method_tb {
     private Long payment_method_id;
 
     @Column
-    private String payment_method;
+    private String payment_method; // 결제 방법
 
     @OneToMany(mappedBy = "payment_method_id")
     private List<payment_method_tb> payments = new ArrayList<>();

@@ -15,7 +15,7 @@ public class category_tb {
     private Long category_id;
 
     @Column
-    private String category_name;
+    private String category_name; // 카테고리명
 
     @OneToMany(mappedBy = "category_id")
     private List<product_tb> products = new ArrayList<>();

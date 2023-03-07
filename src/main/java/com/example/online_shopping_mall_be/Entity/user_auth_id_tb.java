@@ -9,12 +9,12 @@ import jakarta.persistence.*;
 public class user_auth_id_tb {
 
     @Id @GeneratedValue
-    private String user_auth_email;
+    private String user_auth_email; // 유저 이메일
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name= "user_id")
     private user_tb user_id;
 
     @Column
-    private String user_password;
+    private String user_password; // 유저 비번
 }
