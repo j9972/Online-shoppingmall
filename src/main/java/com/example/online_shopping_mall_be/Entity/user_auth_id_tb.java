@@ -1,18 +1,24 @@
 package com.example.online_shopping_mall_be.Entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 /*
     회원(1) : 회원 인증(1)
  */
 @Entity
+@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class user_auth_id_tb {
 
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long auth_user_id;
+
     private String user_auth_email; // 유저 이메일
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name= "user_id")
+    @OneToOne(mappedBy = "auth_user", fetch = FetchType.LAZY)
     private user_tb user_id;
 
     @Column

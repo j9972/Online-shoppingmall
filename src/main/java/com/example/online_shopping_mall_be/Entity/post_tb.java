@@ -1,6 +1,7 @@
 package com.example.online_shopping_mall_be.Entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 /*
     회원(1) : 게시글(N)
@@ -13,6 +14,10 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
+@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class post_tb {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +25,7 @@ public class post_tb {
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    private user_tb user_id; // FK - 회원 아이디
+    private user_tb user; // FK - 회원 아이디
 
     private String post_title; // 게시글 제목
 
@@ -32,12 +37,12 @@ public class post_tb {
 
     private boolean comment_status; // 댓글 여부
 
-    @OneToMany(mappedBy = "post_id")
+    @OneToMany(mappedBy = "post")
     private List<post_photo_tb> post_photos = new ArrayList<>();
 
-    @OneToMany(mappedBy = "post_id")
+    @OneToMany(mappedBy = "post")
     private List<comment_tb> comments = new ArrayList<>();
 
-    @OneToMany(mappedBy = "post_id")
+    @OneToMany(mappedBy = "post")
     private List<like_tb> likes = new ArrayList<>();
 }

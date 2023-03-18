@@ -1,23 +1,28 @@
 package com.example.online_shopping_mall_be.Entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 /*
     리뷰(n) : 상품(1)
     리뷰(n) : 회원(1)
  */
 @Entity
+@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class review_tb {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long review_id;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "product_id")
-    private product_tb product_id;
+    private product_tb product;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
-    private user_tb user_id;
+    private user_tb user;
 
     @Column
     private String review_title; // 리뷰 제못

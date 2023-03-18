@@ -1,14 +1,22 @@
 package com.example.online_shopping_mall_be.Entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /*
     댓글(N) : 게시글(1)
     댓글(N) : 회원(1)
+    댓글(1) : 좋아요(n)
  */
 @Entity
+@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class comment_tb {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,11 +24,14 @@ public class comment_tb {
 
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    private user_tb user_id;
+    private user_tb user;
 
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JoinColumn(name = "post_id")
-    private post_tb post_id;
+    private post_tb post;
+
+    @OneToMany(mappedBy = "comment")
+    private List<like_tb> likes = new ArrayList<>();
 
     @Column
     private String comment_body; // 댓글 내용

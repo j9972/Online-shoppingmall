@@ -1,6 +1,7 @@
 package com.example.online_shopping_mall_be.Entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,15 +12,18 @@ import java.util.List;
     주문 상세 ( 1 ) : 주문 취소 ( 1 )
  */
 @Entity
+@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class order_detail_tb {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long order_detail_id;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "order_id")
+    @OneToOne(mappedBy = "order_detail", fetch = FetchType.LAZY)
     private order_tb order_id;
 
-    @OneToMany(mappedBy = "order_detail_id")
+    @OneToMany(mappedBy = "order_detail")
     private List<product_tb> products = new ArrayList<>();
 
     @Column
@@ -39,6 +43,8 @@ public class order_detail_tb {
 
     private boolean refund_possibility; // 환불 가능 여부
 
-    @OneToOne(mappedBy = "order_detail_id", fetch = FetchType.LAZY)
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name= "order_cancel_id")
     private order_cancel_tb order_cancel;
 }

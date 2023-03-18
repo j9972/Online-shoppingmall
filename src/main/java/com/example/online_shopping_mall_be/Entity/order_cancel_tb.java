@@ -1,17 +1,21 @@
 package com.example.online_shopping_mall_be.Entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 /*
     주문 상세 ( 1 ) : 주문 취소 ( 1 )
  */
 @Entity
+@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class order_cancel_tb {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long refund_id;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name= "product_detail_id")
+    @OneToOne(mappedBy = "order_cancel", fetch = FetchType.LAZY)
     private order_detail_tb order_detail_id;
 
     @Column

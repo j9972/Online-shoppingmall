@@ -1,6 +1,7 @@
 package com.example.online_shopping_mall_be.Entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.Date;
 /*
@@ -9,12 +10,15 @@ import java.util.Date;
  */
 
 @Entity
+@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class delivery_point_tb {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long delivery_point_id;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name= "order_id")
+    @OneToOne(mappedBy = "delivery_point", fetch = FetchType.LAZY)
     private order_tb order_id;
 
     @Column
@@ -32,6 +36,6 @@ public class delivery_point_tb {
 
     private Date end_delivery_date;// 배송 완료 날짜
 
-    @OneToOne(mappedBy = "delivery_point_id", fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "delivery_point", fetch = FetchType.LAZY)
     private waybill_tb waybill;
 }

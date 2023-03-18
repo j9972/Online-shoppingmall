@@ -1,17 +1,20 @@
 package com.example.online_shopping_mall_be.Entity;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 /*
     user (1) : refreshToken  -> N:1로 단반향 맵핑
     단반향으로 하는 이유는 user가 있는지 우션 확인하고 token을 확인하는 flow가 맞는거 같아서 단 방향
  */
 @Entity
-@RequiredArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Getter
+@Builder
+@AllArgsConstructor
 public class refreshToken_tb {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "refresh_token_id")
     private Long id;
 
     @Column
@@ -23,10 +26,11 @@ public class refreshToken_tb {
     @JoinColumn(name = "user_id")
     private user_tb user_id;
 
+
     @Builder
     public refreshToken_tb(String refreshToken, user_tb user_id) {
         this.refreshToken = refreshToken;
-        this.user_id = user_id;
+        user_id = user_id;
     }
 
     /*

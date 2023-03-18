@@ -1,20 +1,27 @@
 package com.example.online_shopping_mall_be.Entity;
 
 import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /*
     결제가 완료된 상태에서 주어짐
-    결제(1)(외래키) : 상품(1) -> 상품마다 결제 아이디가 다르다.
+    결제(1)(외래키) : 상품(n)
     결제(N) : 결제 방식(1)
  */
 @Entity
+@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class payment_tb {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long payment_id;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name= "product_id")
-    private product_tb product_id;
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
+    private List<payment_tb> payments = new ArrayList<>();
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "payment_method_id")
