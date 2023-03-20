@@ -2,6 +2,7 @@ package com.example.online_shopping_mall_be.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.jetbrains.annotations.NotNull;
 
 /*
     회원(1) : 회원 인증(1)
@@ -16,6 +17,7 @@ public class user_auth_id_tb {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long auth_user_id;
 
+    @NotNull
     private String user_auth_email; // 유저 이메일
 
     @OneToOne(mappedBy = "auth_user", fetch = FetchType.LAZY)

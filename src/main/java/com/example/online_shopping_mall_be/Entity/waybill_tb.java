@@ -2,6 +2,7 @@ package com.example.online_shopping_mall_be.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Date;
 
@@ -24,6 +25,7 @@ public class waybill_tb {
     @Column
     private String delivery_company; // 택배사
 
+    @NotNull
     private Integer waybill_number; // 운송장 번호
 
     private Date waybill_register_date; // 운송장 등록일

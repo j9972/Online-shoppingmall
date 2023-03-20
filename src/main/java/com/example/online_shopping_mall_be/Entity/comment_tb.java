@@ -2,6 +2,7 @@ package com.example.online_shopping_mall_be.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -34,6 +35,7 @@ public class comment_tb {
     private List<like_tb> likes = new ArrayList<>();
 
     @Column
+    @NotNull
     private String comment_body; // 댓글 내용
 
     private Date comment_register_date; // 댓글 업로드 일정

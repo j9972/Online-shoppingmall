@@ -4,6 +4,7 @@ package com.example.online_shopping_mall_be.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.jetbrains.annotations.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -29,11 +30,12 @@ public class ask_tb {
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "product_id")
     private product_tb product;
+    // @NotNull
 
-    @Column
+    @NotNull
     private String ask_body; // 문의 내용
-
-    private String ask_title; // 문의 제못
+    @NotNull
+    private String ask_title; // 문의 제목
 
     @Lob
     private String product_photo; // 상품 사진

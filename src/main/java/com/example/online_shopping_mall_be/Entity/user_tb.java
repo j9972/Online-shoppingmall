@@ -3,6 +3,7 @@ package com.example.online_shopping_mall_be.Entity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.jetbrains.annotations.NotNull;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -30,14 +31,17 @@ public class user_tb {
     private Long user_id;
 
     @Column
+    @NotNull
     private String user_name; // 유저 이름
 
     private Integer user_age; // 나이
 
+    @NotNull
     private Integer user_phone; // 핸드폰 번호
 
     private Integer refund_bank_account; // 환불 계좌 번호
 
+    @NotNull
     private String user_address; // 주소
 
     private String refund_bank; // 환불 은행

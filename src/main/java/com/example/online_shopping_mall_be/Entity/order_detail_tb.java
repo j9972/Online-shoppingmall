@@ -2,6 +2,7 @@ package com.example.online_shopping_mall_be.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,14 +28,19 @@ public class order_detail_tb {
     private List<product_tb> products = new ArrayList<>();
 
     @Column
+    @NotNull
     private Integer total_count; // 총 수량
 
+    @NotNull
     private Integer total_price; // 총 금액
 
+    @NotNull
     private Integer phone_number; // 전화번호
 
+    @NotNull
     private String receiver; // 수령인
 
+    @NotNull
     private String address; // 주소
 
     private String order_request; // 주문 요청 사항

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -29,12 +30,16 @@ public class product_tb {
     @JoinColumn(name = "category_id")
     private category_tb category; // FK - 카테고리명
 
+    @NotNull
     private String product_name; // 상품 명
 
+    @NotNull
     private String product_title; // 타이틀
 
+    @NotNull
     private String product_explaination; // 상품 설명
 
+    @NotNull
     private Integer product_count; // 재고 수량
 
     private Integer product_selling_count; // 판매 수량
