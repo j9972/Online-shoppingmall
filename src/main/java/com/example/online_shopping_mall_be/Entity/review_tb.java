@@ -2,7 +2,7 @@ package com.example.online_shopping_mall_be.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.jetbrains.annotations.NotNull;
+//import org.jetbrains.annotations.NotNull;
 
 /*
     리뷰(n) : 상품(1)
@@ -10,7 +10,6 @@ import org.jetbrains.annotations.NotNull;
  */
 @Entity
 @Getter
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class review_tb {
@@ -26,7 +25,7 @@ public class review_tb {
     private user_tb user;
 
     @Column
-    @NotNull
+    //@NotNull
     private String review_title; // 리뷰 제못
 
 

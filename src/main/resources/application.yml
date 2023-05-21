@@ -1,0 +1,60 @@
+server:
+  port: 9972
+  error:
+    include-message: always
+    include-binding-errors : always
+
+# spring.datasource.url=jdbc:mysql://pbl-sl-2023.crbmakmooaxz.ap-northeast-2.rds.amazonaws.com:3306/middleware
+
+# live server
+devtools:
+  livereload:
+    enabled: true
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url : jdbc:mysql://localhost:3306/shopping_mall
+    username : ENC(/GaXriPH4Q41i84Mu1X2SA==)
+    password : ENC(cTGfD5a1tbAK1X+iHHXaIBUr6SC334xq)
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        validator:
+          apply_to_ddl : false
+        format_sql: true
+    database: mysql
+  mail:
+    # stmp.gmail.com -> 587 port number
+    host: smtp.gmail.com
+    port: 587
+    username: ENC(w9iMx7R7vr/VTYIUchgljoSY018U6uBuyZc1Th/wNqk=)
+    # spring.mail.password= password -> myaccount.google.com
+    password: ENC(v2exHoCOjiZVASHtDWxaQQZxAn9Sim3lV2DgPYBzNbA=)
+    properties:
+      mail:
+        default-encoding : utf-8
+        #debug : true # for developing
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
+
+# for encode of password
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
+
+# hibernate logging
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG

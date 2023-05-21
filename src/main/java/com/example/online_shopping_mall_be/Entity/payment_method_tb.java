@@ -37,6 +37,6 @@ public class payment_method_tb {
     private bank_deposit_tb bank_deposit;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name="kakaopay_deposit_id")
+    @JoinColumn(name="naverpay_deposit_id")
     private naverpay_deposit_tb naverpay_deposit;
 }

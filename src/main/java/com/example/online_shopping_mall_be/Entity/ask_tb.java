@@ -4,11 +4,9 @@ package com.example.online_shopping_mall_be.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.jetbrains.annotations.*;
+//import org.jetbrains.annotations.*;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 /*
     문의(N) : 회원(1)
@@ -16,7 +14,6 @@ import java.util.List;
  */
 @Entity
 @Getter
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class ask_tb {
@@ -32,9 +29,9 @@ public class ask_tb {
     private product_tb product;
     // @NotNull
 
-    @NotNull
+    //@NotNull
     private String ask_body; // 문의 내용
-    @NotNull
+    //@NotNull
     private String ask_title; // 문의 제목
 
     @Lob

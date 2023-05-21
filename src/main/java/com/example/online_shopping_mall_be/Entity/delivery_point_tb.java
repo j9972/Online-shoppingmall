@@ -2,7 +2,7 @@ package com.example.online_shopping_mall_be.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.jetbrains.annotations.NotNull;
+//import org.jetbrains.annotations.NotNull;
 
 import java.util.Date;
 /*
@@ -12,7 +12,6 @@ import java.util.Date;
 
 @Entity
 @Getter
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class delivery_point_tb {
@@ -23,18 +22,18 @@ public class delivery_point_tb {
     private order_tb order_id;
 
     @Column
-    @NotNull
+    //@NotNull
     private String receiver_name; // 수취인 이름
 
-    @NotNull
+    //@NotNull
     private String address; // 수취인 주소
 
     private String delivery_status; // 배송 상태
 
-    @NotNull
+    //@NotNull
     private Integer receiver_phone_num; // 수취인 번호
 
-    @NotNull
+    //@NotNull
     private Integer zip_code; // 우편 번호
 
     private Date start_delivery_date; // 배송 시작 날짜

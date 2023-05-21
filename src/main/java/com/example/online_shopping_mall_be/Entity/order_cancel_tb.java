@@ -2,14 +2,13 @@ package com.example.online_shopping_mall_be.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.jetbrains.annotations.NotNull;
+//import org.jetbrains.annotations.NotNull;
 
 /*
     주문 상세 ( 1 ) : 주문 취소 ( 1 )
  */
 @Entity
 @Getter
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class order_cancel_tb {
@@ -22,10 +21,10 @@ public class order_cancel_tb {
     @Column
     private String refund_reason; // 환불 사유
 
-    @NotNull
+    //@NotNull
     private String refund_bank_name; // 환불 계좌
 
-    @NotNull
+    //@NotNull
     private Integer refund_bank_number; // 환불 계좌 번호
 
     @Lob

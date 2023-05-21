@@ -13,15 +13,14 @@ import java.util.List;
  */
 @Entity
 @Getter
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class payment_tb {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long payment_id;
 
-    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
-    private List<payment_tb> payments = new ArrayList<>();
+    @OneToMany(mappedBy = "payment")
+    private List<product_tb> products = new ArrayList<>();
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "payment_method_id")

@@ -10,7 +10,6 @@ import java.util.Date;
  */
 @Entity
 @Getter
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class naverpay_deposit_tb {

@@ -8,7 +8,6 @@ import lombok.*;
  */
 @Entity
 @Getter
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class product_photo_tb {

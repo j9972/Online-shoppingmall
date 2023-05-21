@@ -8,8 +8,9 @@ import lombok.*;
     단반향으로 하는 이유는 user가 있는지 우션 확인하고 token을 확인하는 flow가 맞는거 같아서 단 방향
  */
 @Entity
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor
 @Getter
+@Setter
 @Builder
 @AllArgsConstructor
 public class refreshToken_tb {
@@ -18,7 +19,7 @@ public class refreshToken_tb {
     private Long id;
 
     @Column
-    private String refreshToken;
+    private String refreshToken;  // value 를 의미하겠네
 
     //private created dateTime(6)
 

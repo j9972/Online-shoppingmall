@@ -13,7 +13,6 @@ import java.util.List;
  */
 @Entity
 @Getter
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class shopping_basket_tb {

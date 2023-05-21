@@ -9,7 +9,6 @@ import lombok.*;
  */
 @Entity
 @Getter
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class like_tb {

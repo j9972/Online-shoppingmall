@@ -2,7 +2,7 @@ package com.example.online_shopping_mall_be.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.jetbrains.annotations.NotNull;
+// import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,6 @@ import java.util.List;
  */
 @Entity
 @Getter
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class category_tb {
@@ -21,7 +20,7 @@ public class category_tb {
     private Long category_id;
 
     @Column
-    @NotNull
+    //@NotNull
     private String category_name; // 카테고리명
 
     @OneToMany(mappedBy = "category")
